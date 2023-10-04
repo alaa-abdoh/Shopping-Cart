@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+:root{
+  --myGreen : #99dca8;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body{
+  font-family: 'Raleway', sans-serif;
+}
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width:768px) {
+  .container{
+      width:750px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (min-width:992px) {
+  .container{
+      width:970px;
+  }
+}
+@media (min-width:1200px) {
+  .container{
+      width:1170px;
+  }
+}
+header{
+  background-color: #232f3e;
+}
+header .container{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 49px; /*for show the list icon*/
+  position: relative;
+}
+header .container .logo{
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
   color: white;
+  position: relative;
+}
+header .container .logo span::before{
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: var(--myGreen);
+  transition: width 0.4s linear;
+}
+header .container .logo span:first-child::before{
+  left: 0;
+  top: -1px;
+}
+header .container .logo span:last-child::before{
+  right: 0;
+  bottom: -1px;
+}
+header .container .logo:hover span::before{
+  width: 100%;
+}
+header .container .list{
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+header .container .menu-icon{ /*list icon in small screens*/
+  display: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+@media (max-width:767px) {
+  header .container .menu-icon{
+    display: block;
+  }
+}
+header .container ul{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: left 0.5s linear;
+}
+@media (max-width:767px) {
+  header .container ul.show{
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    background-color: #eee;
+    width: 100%;
+    flex-direction: column;
+  }
+  header .container ul.hide{
+    position: absolute;
+    left: -1000px;
+    top: 100%;
+  }
+}
+header .container ul li{
+  padding: 15px 20px;
+}
+header .container ul li a{
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s linear;
+}
+header .container ul li a:hover{
+  color: var(--myGreen);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

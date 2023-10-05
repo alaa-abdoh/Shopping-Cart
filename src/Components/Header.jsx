@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faList } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "react-router-dom";
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -23,18 +23,18 @@ function Header() {
         />
         <ul className={`${showMenu ? "show" : "hide"}`}>
           <li>
-            <a href="">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="">Products</a>
+            <Link to="/Products">Products</Link>
           </li>
           <li>
-            <a href="">Contact Us</a>
+            <Link to="">Contact Us</Link>
           </li>
           <li>
-            <a href="">
+            <Link to="">
               <FontAwesomeIcon icon={faShoppingCart} />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

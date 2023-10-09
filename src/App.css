@@ -182,6 +182,11 @@ header .container ul li a:hover{
   max-height: 80vh;
   overflow: auto;
 }
+@media (max-width:767px){
+  .products .container{
+    grid-template-columns: repeat(auto-fit, minmax(90%,1fr));
+  }
+}
 .products .container::-webkit-scrollbar {
   width: 12px; 
 }
@@ -202,6 +207,12 @@ header .container ul li a:hover{
   width: 110px;
   height: 150px;
 }
+@media (max-width:767px){
+  .products .container .product img{
+    width: 90px;
+    height: 120px;
+  }
+}
 .products .container .product .image{
   align-self: center;
 }
@@ -212,12 +223,22 @@ header .container ul li a:hover{
   text-align: center;
   margin-bottom: 10px;
 }
+@media (max-width:767px){
+  .products .container .product .productInfo h3{
+   font-size: 16px;
+  }
+}
 .products .container .product .productInfo p{
   font-size: 15px;
   line-height: 1.3;
   color: #434343;
   max-height: 145px;
   overflow: auto;
+}
+@media (max-width:767px){
+  .products .container .product .productInfo p{
+   font-size: 14px;
+  }
 }
 .products .container .product .productInfo p::-webkit-scrollbar {
   width: 12px; 
@@ -277,6 +298,15 @@ a.showCart{
   border-radius: 15px;
   cursor: pointer;
   font-weight: bold;
+}
+@media (max-width:767px){
+  .categories button{
+    width: 120px;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 10px;
+    padding: 10px;
+  }
 }
 a.showCart{
   text-decoration: none;

@@ -32,7 +32,7 @@ function Header() {
             <Link to="">Contact Us</Link>
           </li>
           <li>
-            <Link to="">
+            <Link to="/products/cart">
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
           </li>

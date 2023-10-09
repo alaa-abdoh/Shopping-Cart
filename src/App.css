@@ -290,3 +290,66 @@ a.showCart{
   transform: translate(50%, 0);
   cursor: pointer;
 }
+.cart{
+  padding: 50px 0;
+  text-align: center;
+}
+.cart h1{
+  color: var(--myGreen);
+}
+.cart table{
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+@media (max-width:767px){
+  .cart table{
+    font-size: 14px;
+  }
+}
+.cart table th,
+.cart table td{
+  padding: 10px;
+}
+.cart button,
+.checkout form input[type="submit"]{
+  padding: 10px;
+  background-color: var(--myGreen);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+}
+.cart table thead tr{
+  background-color: var(--myGreen);
+}
+.cart table tr:nth-child(even){
+  background-color:#eee;
+}
+.checkout{
+  padding: 50px 0;
+}
+.checkout form{
+  text-align: center;
+  max-width: 800px;
+  border: 1px solid var(--myGreen);
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 20px;
+}
+.checkout form input:not([type="submit"]){
+  display: block;
+  border: none;
+  padding: 10px;
+  font-size: 17px;
+  border-bottom:1px solid var(--myGreen) ;
+  max-width: 400px;
+  margin: 10px auto;
+  color: var(--myGreen);
+}
+.checkout form input:not([type="submit"]):focus{
+  outline: none;
+}
+.checkout form input[type="submit"]{
+  margin-top: 20px;
+}

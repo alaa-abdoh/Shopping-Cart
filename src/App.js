@@ -4,15 +4,18 @@ import Landing from './Components/Landing';
 import ShowProducts from './Components/ShowProducts';
 import Cart from './Components/Cart';
 import { Route, Routes } from 'react-router-dom';
+import CartProvider from './Context/CartProvide';
 function App() {
   return (
-    <div className="App">
+    <div className="App">     
       <Header/>
-      <Routes>
-        <Route path='/' element={<Landing/>}/>
-        <Route path='Products' element={<ShowProducts/>}/>
-        <Route path='products/cart' element={<Cart/>}/>
-      </Routes>
+      <CartProvider>
+        <Routes>
+            <Route path='/' element={<Landing/>}/>
+            <Route path='Products' element={<ShowProducts/>}/>
+            <Route path='products/cart' element={<Cart/>}/>
+          </Routes>
+      </CartProvider>
     </div>
   );
 }

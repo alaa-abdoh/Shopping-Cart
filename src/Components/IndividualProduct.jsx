@@ -1,11 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus} from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { cartContext } from "../Context/CartProvide"; 
+import { useContext } from "react";
+import Swal from 'sweetalert2'
+
 function IndividualProduct(props){
-    let [cart, setCart]= useState([]);
+    let {cart} = useContext(cartContext)
+    let {setCart} = useContext(cartContext)
     let {pro} = props;
     function handleClick(){
-        setCart([...cart, pro])
+        setCart([...cart, pro]);
+        Swal.fire({
+            title: 'Added',
+            text: 'The item added successfully to the cart',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor:"#99dca8"
+        })
     }
     return(
         <div className="product">

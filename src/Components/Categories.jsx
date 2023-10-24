@@ -1,5 +1,17 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 function Categories(props){
-    let categories = ["All", "men's clothing", "women's clothing", "jewelery", "electronics"]
+
+    let [categories, setCategories] = useState(["All"])
+
+    useEffect(()=>{
+        const fetchData= async ()=>{
+            const obj= await axios.get("https://fakestoreapi.com/products/categories");
+            setCategories([...categories, ...obj.data])
+        }
+        fetchData()
+    },[])
     return(
         <div className="categories">
            <div className="container">

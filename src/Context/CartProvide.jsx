@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
-export const cartContext = createContext() ;
+export const CartContext = createContext() ;
 
 function CartProvide({children}){
     let [cart, setCart] = useState([]);
     return(
-        <cartContext.Provider value={{cart, setCart}}>
+        <CartContext.Provider value={{cart, setCart}}>
             {children}
-        </cartContext.Provider>
+        </CartContext.Provider>
     )
 }
 export default CartProvide;

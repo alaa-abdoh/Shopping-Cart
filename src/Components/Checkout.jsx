@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Swal from 'sweetalert2'
-import { cartContext } from "../Context/CartProvide"; 
+import { CartContext } from "../Context/CartProvide"; 
 import { useContext} from "react";
+
 function Checkout(){
-    let [isCheckout, setIsCheckout] = useState(false);
-    let {setCart} = useContext(cartContext);
+    const [isCheckout, setIsCheckout] = useState(false);
+    const {setCart} = useContext(CartContext);
+
     function handleSubmit(e){
         e.preventDefault();
         setIsCheckout(false);

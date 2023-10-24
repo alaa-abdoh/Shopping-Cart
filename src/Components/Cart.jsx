@@ -1,11 +1,11 @@
-import { cartContext } from "../Context/CartProvide"; 
+import { CartContext } from "../Context/CartProvide"; 
 import { useContext} from "react";
 import Swal from 'sweetalert2'
 import Checkout from "./Checkout";
 
 function Cart(){
-    let {cart} = useContext(cartContext)
-    let {setCart} = useContext(cartContext)
+    const {cart, setCart} = useContext(CartContext)
+
     function handleDelete(id){
         Swal.fire({
             title: 'Delete',
@@ -24,7 +24,7 @@ function Cart(){
         })
     }
     function calculateAmount(){
-        let amount = cart.reduce((acc, ele)=>{ return acc + ele.price},0);
+        const amount = cart.reduce((acc, ele)=> acc + ele.price,0);
         return amount.toFixed(3);
     }
     return(

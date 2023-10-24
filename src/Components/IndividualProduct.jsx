@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus} from "@fortawesome/free-solid-svg-icons";
-import { cartContext } from "../Context/CartProvide"; 
+import { CartContext } from "../Context/CartProvide"; 
 import { useContext } from "react";
 import Swal from 'sweetalert2'
 
 function IndividualProduct(props){
-    let {cart} = useContext(cartContext)
-    let {setCart} = useContext(cartContext)
-    let {pro} = props;
+    const {cart, setCart} = useContext(CartContext)
+    const {pro} = props;
+
     function handleClick(){
         setCart([...cart, pro]);
         Swal.fire({
